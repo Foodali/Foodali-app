@@ -1,0 +1,292 @@
+<ion-header class="home-mw">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="postmyfood"></ion-back-button>
+        </ion-buttons>  
+    <ion-title>Food Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- Textarea in an item with a floating label -->
+<ion-item class="home-mw">
+    <ion-label position="floating">Food Title</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+<ion-item class="home-mw">>
+  <ion-label position="floating">Description</ion-label>
+  <ion-textarea></ion-textarea>
+</ion-item>
+
+
+<ion-grid class="home-mw">
+    <ion-row>
+      <ion-col>
+          <ion-card>
+              <ion-card-header>
+                <ion-card-title>Upload Food Picture</ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>
+          
+                  <img style="width: 50px;" src="/assets/icon/_ionicons_svg_md-cloud-upload.svg">
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+      
+      
+      <ion-col>
+        
+  <ion-card class="home-mw">
+      <ion-card-header>
+        <ion-card-title>Number of Servings</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+          <ion-input type="number" value="5"></ion-input>
+      </ion-card-content>
+    </ion-card>
+      </ion-col>
+
+
+
+    </ion-row>
+    </ion-grid>
+
+<!-- Default Segment -->
+<ion-segment class="home-mw">
+    <ion-segment-button value="friends">
+      <ion-label>Pick-up only</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      <ion-label>Deliver</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+</ion-content>
+
+<ion-footer class="home-mw">
+
+    <ion-toolbar>
+      <ion-title>
+
+
+<ion-button expand="full" >Publish</ion-button>
+
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+
+
+  <div class="home-dw"
+  style="position: fixed; z-index:  111000; top:0; left:0; width:100%; height:100%; overflow-y: scroll; background: #333;">
+  
+
+  <div style="width:100%; height: 90px; position: absolute; top:0; left:0;  z-index: 1000000;">
+      <div class="flex-container" >
+    
+        <div style="text-align: left; font-size: 25px; padding: 10px; background: #fff;">
+          &nbsp; &nbsp; Food<span style="color: darkgreen; ">Ali</span>
+          &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size: 15px; cursor: pointer;"><u>Airoli, Sector 9</u>&nbsp; &nbsp;
+            <ion-icon class="icon" name="locate"></ion-icon></span>
+        </div>
+        <div style="text-align: left; font-size: 25px; position: relative;">
+          <div
+            style="width: 100%; padding:0; line-height:0; padding-right:20px;  position: absolute; top: 50%;  transform: translateY(-50%);">
+            <ion-icon style="float: right; margin-top:5px;" class="icon" name="person"></ion-icon>
+          
+            <ion-icon style="float: right; margin-top:5px;" class="icon" name="search"></ion-icon>
+           
+            <div style="clear: both;"></div>
+          </div>
+    
+    
+        </div>
+    
+      </div>
+    
+    
+    </div>
+    <br/><br/><br/><br/>
+    <ion-card style="background: #fff; margin: 120px;"> 
+        <ion-card-header style="height: 100px;" >
+            <ion-tabs>
+              
+                <ion-tab-bar slot="top">
+           
+              
+                  <ion-tab-button tab="tab1" >
+                    <ion-icon name="jet"></ion-icon>
+                    <ion-label>Poster</ion-label>
+                  </ion-tab-button>
+              
+                  <ion-tab-button tab="tab2"  [routerLink]="['/manage']" routerDirection="forward">
+                    <ion-icon name="menu"></ion-icon>
+                    <ion-label>Manage</ion-label>
+                  </ion-tab-button>
+              
+                  <ion-tab-button tab="tab2">
+                    <ion-icon name="hand"></ion-icon>
+                    <ion-label>Blacklist</ion-label>
+                  </ion-tab-button>
+                </ion-tab-bar>
+              </ion-tabs>
+
+              
+        </ion-card-header>
+      
+        <ion-card-content>
+            <!--
+              stepper ref : 
+              https://devdactic.com/angular-material-ionic-4/ -->
+       
+          
+              <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+                  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+                </button>
+                <mat-vertical-stepper [linear]="isLinear" #stepper>
+                  <mat-step [stepControl]="firstFormGroup">
+                    <form [formGroup]="firstFormGroup">
+                      <ng-template matStepLabel>Fill your food title</ng-template>
+                      <mat-form-field>
+                        <input matInput placeholder="Food title" formControlName="firstCtrl" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup">
+                    <form [formGroup]="secondFormGroup">
+                      <ng-template matStepLabel>Fill out your food description</ng-template>
+                      <mat-form-field>
+                        <input matInput placeholder="Food description" formControlName="secondCtrl" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="thirdFormGroup">
+                    <form [formGroup]="thirdFormGroup">
+                      <ng-template matStepLabel>Upload one picture for your food</ng-template>
+                      <button mat-button>BROWSE FILES</button>
+
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  
+                  <mat-step [stepControl]="fourthFormGroup">
+                    <form [formGroup]="fourthFormGroup">
+                      <ng-template matStepLabel>Provide number of servings</ng-template>
+                      <form class="example-container" [formGroup]="options">
+        
+                      
+                        <mat-form-field>
+                          <input matInput type="number" placeholder="Number of servings" min="1">
+                        </mat-form-field>
+                        
+                      </form>
+                      
+
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  
+                  <mat-step [stepControl]="fifthFormGroup">
+                    <form [formGroup]="fifthFormGroup">
+                      <ng-template matStepLabel>Choose delivery option</ng-template>
+                      <!-- <ion-segment (ionChange)="segmentChanged($event)">
+                        <ion-segment-button value="friends">
+                          <ion-label>Pick-up only</ion-label>
+                        </ion-segment-button>
+                        <ion-segment-button value="enemies">
+                          <ion-label>Home delivery</ion-label>
+                        </ion-segment-button>
+                      </ion-segment> -->
+
+                      <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+                        <mat-button-toggle value="bold">Pick-up only</mat-button-toggle>
+                        <mat-button-toggle value="bold">Home delivery</mat-button-toggle>
+                      </mat-button-toggle-group>
+
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    You are now done.
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button (click)="stepper.reset()">Reset</button>
+                    </div>
+                  </mat-step>
+                </mat-vertical-stepper>
+                
+
+        </ion-card-content>
+
+
+      </ion-card>
+
+      <div style="width: 100%; height:450px; background: rgb(56, 40, 9); color: honeydew">
+        <div class="flex-container">
+          
+          <div class="foo">
+            <br/>
+             <ion-text style="text-align: left">
+                 <h3>About Foodali</h3>
+               </ion-text>
+               <p class="listing-foo">About us</p>
+               <p class="listing-foo">Team</p>
+               <p class="listing-foo">Careers</p>
+               <p class="listing-foo">Offers</p>
+               <p class="listing-foo">Contact</p>
+          </div>
+          <div  class="foo">
+             <br/>
+             <ion-text style="text-align: left">
+                 <h3>Get Help</h3>
+               </ion-text>
+               <p class="listing-foo">Help and support</p>
+               <p class="listing-foo">Partner with us</p>
+               <p class="listing-foo">Ride with us</p>
+               <p class="listing-foo">Blog</p>
+          </div>
+          <div class="foo">
+             <br/>
+             <ion-text style="text-align: left">
+                 <h3>Get FoodAli in your phone</h3>
+               </ion-text>
+               <img style="margin-top: 10px; float:left; margin-right: 10px;" width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"/>
+              
+               <img style="margin-top: 10px; float:left; " width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"/>
+      
+          </div>
+ 
+          </div>
+          </div>
+          <ion-footer style="background: rgb(20, 20, 20); text-align:center">
+             <ion-toolbar>
+               <ion-title>Copyright 2019, Foodali inc.
+               </ion-title>
+             </ion-toolbar>
+           </ion-footer>
+
+    </div>

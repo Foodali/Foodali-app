@@ -1,0 +1,88 @@
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-item>
+                <ion-label>Are you a professional cook?</ion-label>
+                <ion-select placeholder="Select One">
+                  <ion-select-option value="f">Yes</ion-select-option>
+                  <ion-select-option value="m">No</ion-select-option>
+                </ion-select>
+              </ion-item>
+        </ion-card-header>
+      
+   
+      </ion-card>
+      <ion-card>
+          <ion-card-header>
+                  <ion-item>
+                      <ion-label>Are you a veg or non-veg?</ion-label>
+                      <ion-select placeholder="Select One">
+                        <ion-select-option value="f">Veg</ion-select-option>
+                        <ion-select-option value="m">Non-veg</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+          </ion-card-header>
+        
+        </ion-card>
+        <ion-card>
+            <ion-card-header>
+              <ion-card-title>Your favourite cuisine</ion-card-title>
+            </ion-card-header>
+            <ion-input placeholder="Search cuisine"></ion-input>
+            <ion-card-content>
+           
+                  
+                  <ion-chip>
+                    <ion-avatar>
+                      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+                    <ion-label>Chinese</ion-label>
+                    <ion-icon name="close-circle"></ion-icon>
+                  </ion-chip>
+                           
+                  <ion-chip>
+                      <ion-avatar>
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                      </ion-avatar>
+                      <ion-label>Italian</ion-label>
+                      <ion-icon name="close-circle"></ion-icon>
+                    </ion-chip>
+                             
+                  <ion-chip>
+                      <ion-avatar>
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                      </ion-avatar>
+                      <ion-label>Indian</ion-label>
+                      <ion-icon name="close-circle"></ion-icon>
+                    </ion-chip>
+                             
+                  <ion-chip>
+                      <ion-avatar>
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                      </ion-avatar>
+                      <ion-label>Mexican</ion-label>
+                      <ion-icon name="close-circle"></ion-icon>
+                    </ion-chip>
+            </ion-card-content>
+          </ion-card>
+
+
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-title>
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+              
+        <ion-button (click)="Skip()" expand="block">Skip</ion-button>
+              </ion-col>
+              <ion-col>
+               
+
+  <ion-button (click)="Next()" expand="block">Next</ion-button>
+              </ion-col>
+            </ion-row>
+</ion-grid></ion-title>
+    </ion-toolbar>
+  </ion-footer>

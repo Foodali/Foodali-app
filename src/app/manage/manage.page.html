@@ -1,0 +1,352 @@
+<ion-header class="home-mw">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="postmyfood"></ion-back-button>
+        </ion-buttons>  
+    <ion-title>Food Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- Textarea in an item with a floating label -->
+<ion-item class="home-mw">
+    <ion-label position="floating">Food Title</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+<ion-item class="home-mw">>
+  <ion-label position="floating">Description</ion-label>
+  <ion-textarea></ion-textarea>
+</ion-item>
+
+
+<ion-grid class="home-mw">
+    <ion-row>
+      <ion-col>
+          <ion-card>
+              <ion-card-header>
+                <ion-card-title>Upload Food Picture</ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>
+          
+                  <img style="width: 50px;" src="/assets/icon/_ionicons_svg_md-cloud-upload.svg">
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+      
+      
+      <ion-col>
+        
+  <ion-card class="home-mw">
+      <ion-card-header>
+        <ion-card-title>Number of Servings</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+          <ion-input type="number" value="5"></ion-input>
+      </ion-card-content>
+    </ion-card>
+      </ion-col>
+
+
+
+    </ion-row>
+    </ion-grid>
+
+<!-- Default Segment -->
+<ion-segment class="home-mw">
+    <ion-segment-button value="friends">
+      <ion-label>Pick-up only</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      <ion-label>Deliver</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+</ion-content>
+
+<ion-footer class="home-mw">
+
+    <ion-toolbar>
+      <ion-title>
+
+
+<ion-button expand="full" >Publish</ion-button>
+
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+
+
+  <div class="home-dw"
+  style="position: fixed; z-index:  111000; top:0; left:0; width:100%; height:100%; overflow-y: scroll; background: #333;">
+  
+
+  <div style="width:100%; height: 90px; position: absolute; top:0; left:0;  z-index: 1000000;">
+      <div class="flex-container" >
+    
+        <div style="text-align: left; font-size: 25px; padding: 10px; background: #fff;">
+          &nbsp; &nbsp; Food<span style="color: darkgreen; ">Ali</span>
+          &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size: 15px; cursor: pointer;"><u>Airoli, Sector 9</u>&nbsp; &nbsp;
+            <ion-icon class="icon" name="locate"></ion-icon></span>
+        </div>
+        <div style="text-align: left; font-size: 25px; position: relative;">
+          <div
+            style="width: 100%; padding:0; line-height:0; padding-right:20px;  position: absolute; top: 50%;  transform: translateY(-50%);">
+            <ion-icon  [routerLink]="['/profile']" routerDirection="forward" style="float: right; margin-top:5px;" class="icon" name="person"></ion-icon>
+          
+            <ion-icon style="float: right; margin-top:5px;" class="icon" name="search"></ion-icon>
+           
+            <div style="clear: both;"></div>
+          </div>
+    
+    
+        </div>
+    
+      </div>
+    
+    
+    </div>
+    <br/><br/><br/><br/>
+    <ion-card style="background: #fff; margin: 120px;"> 
+        <ion-card-header style="height: 80px;" >
+            <ion-tabs>
+              
+                <ion-tab-bar slot="top">
+           
+              
+                  <ion-tab-button tab="tab1" >
+                    <ion-icon name="jet"></ion-icon>
+                    <ion-label>Poster</ion-label>
+                  </ion-tab-button>
+              
+                  <ion-tab-button tab="tab2">
+                    <ion-icon name="menu"></ion-icon>
+                    <ion-label>Manage</ion-label>
+                  </ion-tab-button>
+              
+                  <ion-tab-button tab="tab2"  [routerLink]="['/blacklist']" routerDirection="forward">
+                    <ion-icon name="hand"></ion-icon>
+                    <ion-label>Blacklist</ion-label>
+                  </ion-tab-button>
+                </ion-tab-bar>
+              </ion-tabs>
+
+              
+        </ion-card-header>
+      
+        <ion-card-content>
+            <!--
+              stepper ref : 
+              https://devdactic.com/angular-material-ionic-4/ -->
+       
+              <ion-row >
+          
+                <ion-col>
+                    <ion-card style="background: #fff">
+                        <ion-header>
+                        <ion-toolbar>
+                            <ion-buttons slot="secondary">
+            
+                              <mat-form-field>
+                                <mat-label>Cuisines</mat-label>
+                                <mat-select [formControl]="toppings" multiple>
+                                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                              
+                              
+                               
+                            </ion-buttons>
+                            <ion-title>Edit your menu card</ion-title>
+                           
+                            <ion-buttons slot="primary">
+                                &nbsp; 
+                                &nbsp; 
+                              <b>Veg</b>
+                                <ion-toggle color="dark"></ion-toggle>
+                              </ion-buttons>
+            
+                
+            
+            
+                          </ion-toolbar>
+                          </ion-header>
+                      
+                        <ion-card-content>
+
+                            <div class="example-container">
+                               
+                                <div style="width: 100%; text-align:center;">
+                                    <ion-badge color="dark"><h3>Un-published</h3></ion-badge>
+                                    </div>
+                                <div
+                                  cdkDropList
+                                  #todoList="cdkDropList"
+                                  [cdkDropListData]="todo"
+                                  [cdkDropListConnectedTo]="[doneList]"
+                                  class="example-list"
+                                  (cdkDropListDropped)="drop($event)">
+                                  <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}
+
+                                      <ion-item-sliding>
+                                          <ion-item>
+                                              <ion-thumbnail slot="start">
+                                            <img style="width: 200px;" src="https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/huevos-rancheros.jpg"/>
+                                        </ion-thumbnail>
+                                         
+                                            <ion-label>Allo Paratha</ion-label><br/>
+                            
+                                          </ion-item>
+                                          <div style="margin: 10px 90px 10px 90px">
+                                              <ion-badge color="primary">Cuisine</ion-badge>   <br/>   
+                                              <ion-icon name="star"></ion-icon> 4.2
+                                              &nbsp;     <br/>
+                                              
+                                                  <ion-icon name="time"></ion-icon> 30 Min
+                                              
+                                              <br/>   
+                                                <b>₹ 150 for 2 servings </b> &nbsp;        <br/>
+                                                <b>Pick-up only </b> &nbsp;        <br/>
+                                              Make this beef stew when the nights draw in. With aubergine and Chinese spices, the flavours are warming and it's slow-cooked for deliciously tender meat...
+                                           </div>
+                                          <ion-item side="end">
+                                            <ion-item  slot="end"><ion-button color="primary"> <ion-icon slot="start" name="create"></ion-icon> Edit Food Card</ion-button></ion-item>
+                                          </ion-item>
+                                        </ion-item-sliding>
+
+                                  </div>
+                              
+                                </div>
+                              </div>
+                              
+                              <div class="example-container">
+                                
+                                <div style="width: 100%; text-align:center;">
+                                <ion-badge color="dark"><h3>Published</h3></ion-badge>
+                                </div>
+                                <div
+                                  cdkDropList
+                                  #doneList="cdkDropList"
+                                  [cdkDropListData]="done"
+                                  [cdkDropListConnectedTo]="[todoList]"
+                                  class="example-list"
+                                  (cdkDropListDropped)="drop($event)">
+                                  <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}
+
+                                      <ion-item-sliding>
+                                          <ion-item>
+                                              <ion-thumbnail slot="start">
+                                            <img style="width: 200px;" src="https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/huevos-rancheros.jpg"/>
+                                        </ion-thumbnail>
+                                         
+                                            <ion-label>Allo Paratha</ion-label><br/>
+                            
+                                          </ion-item>
+                                          <div style="margin: 10px 90px 10px 90px">
+                                              <ion-badge color="primary">Cuisine</ion-badge>   <br/>   
+                                              <ion-icon name="star"></ion-icon> 4.2
+                                              &nbsp;     <br/>
+                                              
+                                                  <ion-icon name="time"></ion-icon> 30 Min
+                                              
+                                              <br/>   
+                                                <b>₹ 150 for 2 servings </b> &nbsp;        <br/>
+                                                <b>Pick-up only </b> &nbsp;        <br/>
+                                              Make this beef stew when the nights draw in. With aubergine and Chinese spices, the flavours are warming and it's slow-cooked for deliciously tender meat...
+                                           </div>
+                                          <ion-item side="end">
+                                            <ion-item  slot="end"><ion-button color="primary"> <ion-icon slot="start" name="create"></ion-icon>Edit food card</ion-button></ion-item>
+                                          </ion-item>
+                                        </ion-item-sliding>
+
+                                  </div>
+                              
+                                </div>
+                              </div>
+
+                      
+                    
+                         
+                          
+                        </ion-card-content>
+                        <ion-footer>
+                            <ion-toolbar>
+                              <ion-title style="cursor: pointer" slot="end">
+                                <img src="http://business-review.eu/wp-content/uploads/2018/02/250px-GoogleMaps.svg_.png" style="width: 40px; float: right;"/>
+                              
+                              </ion-title>
+            <div style="margin: 30px;">
+                              <p>
+                                 <b>Address:</b><br/> Sai Pooja Apartment , Near Airoli-Mulund Bridge, Service Rd, Diva Gaothan, Sector 9, Airoli, Navi Mumbai, Maharashtra 400708
+                                </p>
+                                <p>
+                                  <b>Phone:</b><br/>091673 35233
+            </p>
+            </div>
+            
+                            </ion-toolbar>
+                          </ion-footer> 
+                      </ion-card>
+                </ion-col>
+                  
+                <div style="width: 100%; text-align:center;">
+                    <ion-button size="small" color="primary">
+                        <ion-icon slot="start" name="create"></ion-icon>
+                      Edit contact</ion-button>    
+          
+                    </div>
+              </ion-row>
+
+        </ion-card-content>
+
+
+      </ion-card>
+
+      <div style="width: 100%; height:450px; background: rgb(56, 40, 9); color: honeydew">
+        <div class="flex-container">
+          
+          <div class="foo">
+            <br/>
+             <ion-text style="text-align: left">
+                 <h3>About Foodali</h3>
+               </ion-text>
+               <p class="listing-foo">About us</p>
+               <p class="listing-foo">Team</p>
+               <p class="listing-foo">Careers</p>
+               <p class="listing-foo">Offers</p>
+               <p class="listing-foo">Contact</p>
+          </div>
+          <div  class="foo">
+             <br/>
+             <ion-text style="text-align: left">
+                 <h3>Get Help</h3>
+               </ion-text>
+               <p class="listing-foo">Help and support</p>
+               <p class="listing-foo">Partner with us</p>
+               <p class="listing-foo">Ride with us</p>
+               <p class="listing-foo">Blog</p>
+          </div>
+          <div class="foo">
+             <br/>
+             <ion-text style="text-align: left">
+                 <h3>Get FoodAli in your phone</h3>
+               </ion-text>
+               <img style="margin-top: 10px; float:left; margin-right: 10px;" width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"/>
+              
+               <img style="margin-top: 10px; float:left; " width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"/>
+      
+          </div>
+ 
+          </div>
+          </div>
+          <ion-footer style="background: rgb(20, 20, 20); text-align:center">
+             <ion-toolbar>
+               <ion-title>Copyright 2019, Foodali inc.
+               </ion-title>
+             </ion-toolbar>
+           </ion-footer>
+
+    </div>

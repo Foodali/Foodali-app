@@ -1,0 +1,66 @@
+
+<ion-card-header>
+
+  <ion-card-title><h2 style="text-align: center;" >SIGN IN/UP TO FOODALI</h2></ion-card-title>
+</ion-card-header>
+<mat-dialog-content>
+
+<p style="text-align: center"> Hey Pal! Let's order something now </p>
+
+  
+</mat-dialog-content>
+
+<!-- <mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions> -->
+
+<ion-row>
+  <ion-col size="2">
+      <mat-form-field style="width: 100%;">
+          <mat-select [(value)]="selected">
+            <mat-option value="option1">+91</mat-option>
+            <mat-option value="option2">+92</mat-option>
+            <mat-option value="option3">+90</mat-option>
+          </mat-select>
+        </mat-form-field>
+  </ion-col>
+  <ion-col>
+      
+      <!-- <form class="example-form" style="width: 100%;">
+          <mat-form-field class="example-full-width" style="width: 100%;">
+            <input style="width: 100%;" matInput placeholder="Enter phone number" [(ngModel)]="phn" name="phno" >
+          </mat-form-field>
+        </form> -->
+
+        <form class="example-form" style="width: 100%;">
+          <mat-form-field class="example-full-width"  style="width: 100%;">
+            <input style="width: 100%;" matInput placeholder="Phone number" [(ngModel)]="phn" name="phno" [formControl]="phonenoFormControl"
+                   [errorStateMatcher]="matcher">
+            <mat-hint>Please provide your phone number!</mat-hint>
+            <mat-error *ngIf="phonenoFormControl.hasError('phoneno') && !phonenoFormControl.hasError('required')">
+              Please enter a valid phone no
+            </mat-error>
+            <mat-error *ngIf="phonenoFormControl.hasError('required')">
+              Phone no is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </form>
+        
+        
+
+  </ion-col>
+  <ion-col  size="2" >
+     
+      
+  <button (click)="getLoc()" [disabled]="!phonenoFormControl.valid"  mat-button> <ion-icon name="arrow-forward" ></ion-icon></button>
+  </ion-col>
+
+</ion-row>
+  
+<h4 style="text-align: center"><b>Or, Sign in/up with</b></h4><br/>
+
+<div class="reg-icon-holder">
+ 
+    <ion-icon (click)="googlein()" class="reg-icon" style="color: red; background: #fff;"  name="logo-googleplus"></ion-icon>
+    <ion-icon  (click)="fbin()" class="reg-icon" style="color: blue; background: #fff"   name="logo-facebook"></ion-icon>
+    </div> 

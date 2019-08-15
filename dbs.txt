@@ -1,0 +1,89 @@
+Web API in spring boot with swagger ui
+
+The following API segments to be wrapped in a single swagger ui
+
+1. Generic API
+	- MongoDb for users, cooks, dishes etc.
+2. Transaction API
+	- Oracle for orders (relations, transactions)
+3. Session API
+	- Redis for session management & push notification
+4. Search API
+	- Elasticsearch for search
+
+-----------
+ DB Schema
+-----------
+
+-{MongoDB}
+
+	#users
+		uid
+		phno
+		gname
+		gemail
+		gimgurl
+		fbname
+		fbemail
+		fbimgurl
+
+	#cooks
+		cid
+		uid
+		cook_name
+		cuisines
+
+	#dish
+		did
+		cid
+		dish_name
+		cuisine_type
+		dish_rating
+		dish_prepare_time
+		dish_price
+		no_of_servings
+		food_description
+		publish_status
+		is_veg
+		serial_no
+
+	#blacklisted
+		bid
+		cid
+		uid
+
+	#address
+		aid
+		uid
+		address
+		is_current
+
+-{ORACLE}
+	#transactions
+		tid
+		uid as customer
+		cid as cook
+		did
+		date
+		time
+		aid
+	from transactions table, following scenarios can be populated,
+	past servings, past orders, your favourite and popular dishes/cooks.
+
+-{REDIS}
+	#session
+		*To be discussed later
+
+-{ELASTICSEARCH}
+	Cloning everything from mongodb to elastic with almost same schema
+
+
+
+
+
+
+
+
+
+
+

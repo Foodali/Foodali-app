@@ -1,0 +1,23 @@
+[splash] -> [home] -> [location] -> after login ask ifcook two options, either "postmyfood" or "mhungry"
+
+if "postmyfood"
+-------------
+[foodposter] -> "foodcard"
+
+[managepeople]
+
+[foodmanagement] 
+
+if "mhungry"
+----------
+[nearbycooks aka postmyfood] -> Cook's page with menu card [foodinfo]
+
+
+Extra page
+[profile]
+
+
+*Words wrapped in [] is a pagename & with "" is component or condition 
+
+Total web pages 9
+Total mobile pages 10 including splash screen 

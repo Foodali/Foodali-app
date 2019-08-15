@@ -1,0 +1,245 @@
+
+<div class="home-mw" style="position: fixed; top:0; right:0; width:100%; height:100%; background: #000000;">
+  
+  <div style="position: relative; width: 100%; height:100%;">
+
+    <img src="https://teamwallpaper.com/images/categories/Food/Mobile/.Thumbnail/5b4e1051d29b9-food-wallpaper.png" style="position: absolute; top:0%; left:0; width: 100%; height:100%;"/>
+
+    <div style="position: absolute; top:0%; bottom: 10%; left:0; width: 100%; height:100%; background: rgba(0,0,0,0.7);">
+        <ion-card>
+            <ion-card-header>
+          
+              <ion-card-title style="color: #fff;"><h1>FoodAli</h1></ion-card-title>
+              <ion-card-subtitle style="color: #fff;">Feeling Hungry!</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content style="color: #fff">
+              Order your favorite dishes from the nearby cooks.<br/><br/>
+              <h3 style="text-align: center"><b>Sign in with</b></h3>
+
+<div class="reg-icon-holder">
+ 
+    <ion-icon class="reg-icon" style="color: red; background: seashell;"  name="logo-googleplus"></ion-icon>
+    <ion-icon class="reg-icon" style="color: blue; background: seashell;"   name="logo-facebook"></ion-icon>
+    </div>
+            </ion-card-content>
+            <ion-footer>
+                <ion-toolbar>
+                  <ion-title style="text-align: center">Or, Create a new account</ion-title>
+                </ion-toolbar>
+              </ion-footer>
+          </ion-card>
+    </div>
+    <div style="position: absolute; top:90%; left:0; width: 100%; height:100%; background: #fff">
+        <ion-row>
+            <ion-col size="2">
+                <mat-form-field style="width: 100%;">
+                    <mat-select [(value)]="selected">
+                      <mat-option value="option1">+91</mat-option>
+                      <mat-option value="option2">+92</mat-option>
+                      <mat-option value="option3">+90</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </ion-col>
+            <ion-col>
+                
+                <form class="example-form" style="width: 100%;">
+                    <mat-form-field class="example-full-width" style="width: 100%;">
+                      <input style="width: 100%;" matInput placeholder="Enter phone number" >
+                    </mat-form-field>
+                  </form>
+                  
+
+            </ion-col>
+            <ion-col (click)="getLoc()" size="2" style="text-align: center; background: darkgoldenrod; cursor: pointer;">
+                <ion-icon name="arrow-forward" style="margin-top: 50%;" ></ion-icon>
+                
+            </ion-col>
+          </ion-row>
+    </div>
+<!-- <ion-card class="context home-mw" style="background: rgba(0,0,0,0.7); height:100%; margin:0;">
+
+
+  <ion-card-header class="context-header">
+    <ion-card-title style="color: seashell;">Foodali</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content class="context-body">
+
+  <ion-item>
+    <ion-label position="floating">Phone number*</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+<ion-button expand="block" (click)="goAnOtherPage()">Register</ion-button>
+
+
+<div class="reg-icon-holder">
+ 
+<ion-icon class="reg-icon" style="color: red; background: seashell;"  name="logo-googleplus"></ion-icon>
+<ion-icon class="reg-icon" style="color: blue; background: seashell;"   name="logo-facebook"></ion-icon>
+</div>
+</ion-card-content>
+
+</ion-card> -->
+</div>
+</div>
+
+<div class="home-dw" style="position: fixed; z-index: -111000; top:0; left:0; width:100%; height:100%; overflow-y: scroll;">
+  <div class="flex-container">
+    <div style="position: relative">
+      <div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.7);">
+      
+        <!-- <div style="position: relative; width:100%; height:100%;">
+        
+          <div style="position: absolute; top:0; left:0; width:100%; height:100%; background:#fff">
+          
+          F
+            
+          </div>
+
+        </div> -->
+      
+      </div>
+     
+     
+      <img width="100%" height="100%" src="https://s3.burpple.com/foods/1ad72a48167c04aed881093515_original.?1407752052"/>
+    </div>
+    <div>
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+               
+     <p style="font-size: 30px; transform: translateX(-40px); " class="logofa el"><b>FOODALI</b></p> 
+              </ion-col>
+              <ion-col style=" position: relative;">
+                <div style="width: 100%; padding:0; line-height:0;  position: absolute; top: 50%;  transform: translateY(-50%);">
+                  <ion-button class="not-logged-in" (click)="openDialog()">
+                      {{ifloggedin}}
+                      <ion-icon id="login-icon" slot="end" name="log-in"></ion-icon>
+                    </ion-button>
+
+                    <!-- <ion-button >
+                       Sign up
+                        <ion-icon slot="end" name="person-add"></ion-icon>
+                      </ion-button> -->
+                      </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+     <!-- <div onclick='callAnime()'  class="animate-me" #box></div> -->
+
+    <hr/>
+<div style="margin-left:10%; margin-top: 10%; margin-right: 10%; margin-bottom: 5%;">
+
+  <!-- <div id="cssSelector">
+    <div class="line">
+        <div class="square el"></div>
+    </div>
+</div> -->
+
+     <ion-text style="text-align:center;" slot="starting">
+      <h1 class="ml6">
+        <span class="text-wrapper">
+          <span class="letters">HUNGRY!!!</span>
+        </span>
+      </h1>
+      
+
+      </ion-text>
+
+  
+      <!-- <ion-text class="typewriter" style="text-align:left;">
+          <h4>Order food from a nearby cook</h4>
+        </ion-text> -->
+
+        <h1 class="ml11">
+          <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters">Order food from a nearby cook</span>
+          </span>
+        </h1>
+        
+
+   
+      </div>
+      
+    <ion-card id="locateme" style="margin-left: 10%; margin-right: 10%; cursor:pointer;">
+      <ion-item >
+
+        <ion-label><ion-searchbar id="sloc" placeholder="Search for location" value="{{loc}}"></ion-searchbar></ion-label>
+        <ion-icon name="locate" slot="end" (click)="getLoc()"></ion-icon>
+      </ion-item>
+    </ion-card>
+    <div style="color:purple; font-size: 15px;" id="loc-prompt"></div>
+
+    </div>
+  </div>
+
+      <div class="flex-container">
+          <div class="f2" style="padding: 10%; text-align:left;">
+       
+              <ion-text>
+                  <h1><b>Discover in iOS & Android</b></h1>
+                </ion-text>
+                <ion-text>
+                    <h5>Order from your favorite Cooks & track on the go, with the all-new Foodali app.</h5>
+                  </ion-text>
+
+                <img style="margin-top: 10px;" width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"/>
+                &nbsp;
+                <img style="margin-top: 10px;" width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"/>
+       
+              </div>
+          <div class="f2" style="line-height: 0; font-size: 0;">
+
+            <img width="50%" style="margin-top: 120px; " src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_768,h_978/iPhone_wgconp_j0d1fn"/>
+
+          </div>
+       </div>   
+      
+        
+
+  <div style="width: 100%; height:450px; background: rgb(56, 40, 9); color: honeydew">
+       <div class="flex-container">
+         
+         <div class="foo">
+           <br/>
+            <ion-text style="text-align: left">
+                <h3>About Foodali</h3>
+              </ion-text>
+              <p class="listing-foo">About us</p>
+              <p class="listing-foo">Team</p>
+              <p class="listing-foo">Careers</p>
+              <p class="listing-foo">Offers</p>
+              <p class="listing-foo">Contact</p>
+         </div>
+         <div  class="foo">
+            <br/>
+            <ion-text style="text-align: left">
+                <h3>Get Help</h3>
+              </ion-text>
+              <p class="listing-foo">Help and support</p>
+              <p class="listing-foo">Partner with us</p>
+              <p class="listing-foo">Ride with us</p>
+              <p class="listing-foo">Blog</p>
+         </div>
+         <div class="foo">
+            <br/>
+            <ion-text style="text-align: left">
+                <h3>Get FoodAli in your phone</h3>
+              </ion-text>
+              <img style="margin-top: 10px; float:left; margin-right: 10px;" width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"/>
+             
+              <img style="margin-top: 10px; float:left; " width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"/>
+     
+         </div>
+
+         </div>
+         </div>
+         <ion-footer style="background: rgb(20, 20, 20); text-align:center">
+            <ion-toolbar>
+              <ion-title>Copyright 2019, Foodali inc.
+              </ion-title>
+            </ion-toolbar>
+          </ion-footer>
+</div>

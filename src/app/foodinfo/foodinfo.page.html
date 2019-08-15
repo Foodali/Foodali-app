@@ -1,0 +1,353 @@
+<ion-header class="home-mw">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="postmyfood"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Food Ali</ion-title>
+
+  </ion-toolbar>
+  <ion-icon style="float: right;" name="more"></ion-icon> 
+</ion-header>
+
+<ion-content class="home-mw">
+
+  <img width="100%" src="https://punampaul.com/wp-content/uploads/2019/02/Gulab-Jamun.jpg"/>
+
+    <ion-card>  
+        <ion-card-header>
+          <ion-card-subtitle>by Chef Raj kishor</ion-card-subtitle>
+          <ion-card-title>One Plate Gulab-Jamun</ion-card-title>
+          <h2>Rs. 160</h2>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+      </ion-card>
+      
+      <ion-card>
+        <ion-item>
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label>Sai Riddhi Apartment, Sector 9, Airoli, Navi Mumbai</ion-label>
+          <ion-button fill="outline" slot="end">View</ion-button>
+        </ion-item>
+      
+        <ion-card-content>
+         Landmark : Vittal Mandir
+        </ion-card-content>
+      </ion-card>
+      
+      <ion-card>
+   
+      
+        <ion-item href="#">
+          <ion-icon name="wine" slot="start"></ion-icon>
+          <ion-label>Cook's Menu</ion-label>
+        </ion-item>
+      
+        <ion-item class="activated">
+          <ion-icon name="warning" slot="start"></ion-icon>
+          <ion-label>Cook's Profile</ion-label>
+        </ion-item>
+      
+        <ion-item>
+          <ion-icon name="walk" slot="start"></ion-icon>
+          <ion-label>Order Type : <b>Pick-up Only</b></ion-label>
+        </ion-item>
+      </ion-card>
+</ion-content>
+<ion-footer class="home-mw">
+    <ion-toolbar>
+      <ion-title><ion-button expand="full"  >Request</ion-button></ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+
+
+
+
+<div class="home-dw"
+style="position: fixed; z-index: -111000; top:0; left:0; width:100%; height:100%; overflow-y: scroll; background: #333;">
+
+
+<!-- <ion-header>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-text style="float: left;">
+            <h1>Foodali</h1>
+          </ion-text>
+          <ion-toolbar style="float: left; width:50%;">
+
+
+
+            <ion-title>
+              <ion-label>
+                <span class="address">Diva Gaon, Airoli </span> &nbsp;
+                <ion-icon class="icon" name="locate"></ion-icon>
+              </ion-label>
+
+            </ion-title>
+          </ion-toolbar>
+        </ion-col>
+
+
+        <ion-col style=" position: relative;">
+          <div
+            style="width: 100%; padding:0; line-height:0;  position: absolute; top: 50%;  transform: translateY(-50%);">
+
+            <ion-searchbar style="width: 70%; float:left;" placeholder="Search for cooks or dishes" animated>
+            </ion-searchbar>
+
+
+            <ion-button style="float: left;">
+              <ion-icon slot="start" name="log-in"></ion-icon>
+              Log in
+
+            </ion-button>
+
+            <div style="clear: both;"></div>
+
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-header> -->
+
+<div style="width:100%; height: 90px; position: absolute; top:0; left:0;  z-index: 1000000;">
+  <div class="flex-container" >
+
+    <div style="text-align: left; font-size: 25px; padding: 10px; background: #fff;">
+      &nbsp; &nbsp; Food<span style="color: darkgreen; ">Ali</span>
+      &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size: 15px; cursor: pointer;"><u>Airoli, Sector 9</u>&nbsp; &nbsp;
+        <ion-icon class="icon" name="locate"></ion-icon></span>
+    </div>
+    <div style="text-align: left; font-size: 25px; position: relative;">
+      <div
+        style="width: 100%; padding:0; line-height:0; padding-right:20px;  position: absolute; top: 50%;  transform: translateY(-50%);">
+
+        <ion-button style="float: right;">
+          <ion-icon slot="start" name="log-in"></ion-icon>
+          Log in
+
+        </ion-button>
+        <ion-icon style="float: right; margin-top:5px;" class="icon" name="search"></ion-icon>
+        <div style="clear: both;"></div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+</div>
+
+<ion-row style="margin: 100px;">
+    <ion-col size="3">
+        <ion-card style="background: #fff">
+            <ion-card-header>
+              <img src="https://thetoptenchefs.com/wp/wp-content/uploads/2016/03/Sanjeev-Kapoor-226x300.jpg"/>
+              <ion-card-title >Cook name</ion-card-title>
+              <ion-card-subtitle >Cuisine Type</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+          
+              
+                  <ion-icon name="star"></ion-icon> 4.2
+              &nbsp;
+              
+                  <ion-icon name="time"></ion-icon> 30 Min
+              
+              <br/>
+                <b>₹ 150 for 2 servings </b> &nbsp; <b>Pickup only</b>
+              
+            </ion-card-content>
+          </ion-card>
+    </ion-col>
+    <ion-col>
+        <ion-card style="background: #fff">
+            <ion-header>
+            <ion-toolbar>
+                <ion-buttons slot="secondary">
+
+                  <mat-form-field>
+                    <mat-label>Cuisines</mat-label>
+                    <mat-select [formControl]="toppings" multiple>
+                      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+                  
+                   
+                </ion-buttons>
+                <ion-title>Menu card</ion-title>
+               
+                <ion-buttons slot="primary">
+                    &nbsp; 
+                    &nbsp; 
+                  <b>Veg</b>
+                    <ion-toggle color="dark"></ion-toggle>
+                  </ion-buttons>
+
+    
+
+
+              </ion-toolbar>
+              </ion-header>
+          
+            <ion-card-content>
+          
+                <ion-list>
+     
+                    <ion-item-sliding>
+                        <ion-item>
+                            <ion-thumbnail slot="start">
+                          <img style="width: 200px;" src="https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/huevos-rancheros.jpg"/>
+                      </ion-thumbnail>
+                       
+                          <ion-label>Allo Paratha</ion-label><br/>
+          
+                        </ion-item>
+                        <div style="margin: 10px 90px 10px 90px">
+                            <ion-badge color="primary">Cuisine</ion-badge>   <br/>   
+                            <ion-icon name="star"></ion-icon> 4.2
+                            &nbsp;     <br/>
+                            
+                                <ion-icon name="time"></ion-icon> 30 Min
+                            
+                            <br/>   
+                              <b>₹ 150 for 2 servings </b> &nbsp;        <br/>
+                            Make this beef stew when the nights draw in. With aubergine and Chinese spices, the flavours are warming and it's slow-cooked for deliciously tender meat...
+                         </div>
+                        <ion-item side="end">
+                          <ion-item  slot="end"><ion-button color="success">Request</ion-button></ion-item>
+                        </ion-item>
+                      </ion-item-sliding>
+
+                      <ion-item-sliding>
+                          <ion-item>
+                              <ion-thumbnail slot="start">
+                            <img style="width: 200px;" src="https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/huevos-rancheros.jpg"/>
+                        </ion-thumbnail>
+                         
+                            <ion-label>Allo Paratha</ion-label><br/>
+            
+                          </ion-item>
+                          <div style="margin: 10px 90px 10px 90px">
+                              <ion-badge color="primary">Cuisine</ion-badge>   <br/>   
+                              <ion-icon name="star"></ion-icon> 4.2
+                              &nbsp;     <br/>
+                              
+                                  <ion-icon name="time"></ion-icon> 30 Min
+                              
+                              <br/>   
+                                <b>₹ 150 for 2 servings </b> &nbsp;        <br/>
+                              Make this beef stew when the nights draw in. With aubergine and Chinese spices, the flavours are warming and it's slow-cooked for deliciously tender meat...
+                           </div>
+                          <ion-item side="end">
+                            <ion-item  slot="end"><ion-button color="success">Request</ion-button></ion-item>
+                          </ion-item>
+                        </ion-item-sliding>
+                        <ion-item-sliding>
+                            <ion-item>
+                                <ion-thumbnail slot="start">
+                              <img style="width: 200px;" src="https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/huevos-rancheros.jpg"/>
+                          </ion-thumbnail>
+                           
+                              <ion-label>Allo Paratha</ion-label><br/>
+              
+                            </ion-item>
+                            <div style="margin: 10px 90px 10px 90px">
+                                <ion-badge color="primary">Cuisine</ion-badge>   <br/>   
+                                <ion-icon name="star"></ion-icon> 4.2
+                                &nbsp;     <br/>
+                                
+                                    <ion-icon name="time"></ion-icon> 30 Min
+                                
+                                <br/>   
+                                  <b>₹ 150 for 2 servings </b> &nbsp;        <br/>
+                                Make this beef stew when the nights draw in. With aubergine and Chinese spices, the flavours are warming and it's slow-cooked for deliciously tender meat...
+                             </div>
+                            <ion-item side="end">
+                              <ion-item  slot="end"><ion-button color="success">Request</ion-button></ion-item>
+                            </ion-item>
+                          </ion-item-sliding>
+    
+                  </ion-list>
+             
+              
+            </ion-card-content>
+            <ion-footer>
+                <ion-toolbar>
+                  <ion-title style="cursor: pointer" slot="end">
+                    <img src="http://business-review.eu/wp-content/uploads/2018/02/250px-GoogleMaps.svg_.png" style="width: 40px; float: right;"/>
+                  
+                  </ion-title>
+<div style="margin: 30px;">
+                  <p>
+                     <b>Address:</b><br/> Sai Pooja Apartment , Near Airoli-Mulund Bridge, Service Rd, Diva Gaothan, Sector 9, Airoli, Navi Mumbai, Maharashtra 400708
+                    </p>
+                    <p>
+                      <b>Phone:</b><br/>091673 35233
+</p>
+</div>
+               
+
+                </ion-toolbar>
+              </ion-footer> 
+          </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+  <div style="width: 100%; height:450px; background: rgb(56, 40, 9); color: honeydew">
+      <div class="flex-container">
+        
+        <div class="foo">
+          <br/>
+           <ion-text style="text-align: left">
+               <h3>About Foodali</h3>
+             </ion-text>
+             <p class="listing-foo">About us</p>
+             <p class="listing-foo">Team</p>
+             <p class="listing-foo">Careers</p>
+             <p class="listing-foo">Offers</p>
+             <p class="listing-foo">Contact</p>
+        </div>
+        <div  class="foo">
+           <br/>
+           <ion-text style="text-align: left">
+               <h3>Get Help</h3>
+             </ion-text>
+             <p class="listing-foo">Help and support</p>
+             <p class="listing-foo">Partner with us</p>
+             <p class="listing-foo">Ride with us</p>
+             <p class="listing-foo">Blog</p>
+        </div>
+        <div class="foo">
+           <br/>
+           <ion-text style="text-align: left">
+               <h3>Get FoodAli in your phone</h3>
+             </ion-text>
+             <img style="margin-top: 10px; float:left; margin-right: 10px;" width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"/>
+            
+             <img style="margin-top: 10px; float:left; " width="150px;" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"/>
+    
+        </div>
+
+        </div>
+        </div>
+        <ion-footer style="background: rgb(20, 20, 20); text-align:center">
+           <ion-toolbar>
+             <ion-title>Copyright 2019, Foodali inc.
+             </ion-title>
+           </ion-toolbar>
+         </ion-footer>
+
+</div>
